@@ -19,7 +19,7 @@ struct ContentView: View {
     }
     
     var title: some View{
-        Text("Memorize !")
+        Text(viewModel.chosenTheme.name)
             .font(.largeTitle)
             .fontWeight(.bold)
 
@@ -37,19 +37,25 @@ struct ContentView: View {
     var content: some View{
         GeometryReader{ geometry in
             VStack{
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(viewModel.cards){ card in
-                        Card(card: card).aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                viewModel.choose(card)
-                            }
+                ScrollView{
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                        ForEach(viewModel.cards){ card in
+                            Card(card: card).aspectRatio(2/3, contentMode: .fit)
+                                .onTapGesture {
+                                    viewModel.choose(card)
+                                }
+                        }
                     }
                 }
                 Spacer()
-                newGameButton.foregroundColor(.blue)
+                HStack{
+                    newGameButton.foregroundColor(.blue)
+                    Spacer()
+                    Text("Score : \(viewModel.score)")
+                }
             }
         }
-        .foregroundColor(.red)
+        .foregroundColor(viewModel.cardColor())
     }
     
 //    func calculateTheMinimumSize(cardCount: Int, size: CGSize) -> CGFloat{
