@@ -15,13 +15,6 @@ struct ContentView: View {
             title
             content
             Spacer()
-//            HStack{
-//                theme1
-//                Spacer()
-//                theme2
-//                Spacer()
-//                theme3
-//            }.padding()
         }.padding(.horizontal)
     }
     
@@ -48,7 +41,6 @@ struct ContentView: View {
         .foregroundColor(.red)
     }
     
-    
 //    func calculateTheMinimumSize(cardCount: Int, size: CGSize) -> CGFloat{
 //        var width = 0.0 , height = 0.0
 //        for numOfElementInARow in 1..<cardCount{
@@ -68,48 +60,6 @@ struct ContentView: View {
 //            }
 //        }
 //        return 65
-//    }
-    
-//    var theme1: some View{
-//        Button {
-//            emojis = themes["animals"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "tortoise").font(.largeTitle)
-//                Text("Animals")
-//            }
-//        }
-//
-//    }
-//
-//    var theme2: some View{
-//        Button {
-//            emojis = themes["vegetables"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "leaf").font(.largeTitle)
-//                Text("Vegetables")
-//            }
-//        }
-//
-//    }
-//
-//    var theme3: some View{
-//        Button {
-//            emojis = themes["emojis"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "face.smiling").font(.largeTitle)
-//                Text("Emojis")
-//            }
-//        }
-//
 //    }
 }
 
