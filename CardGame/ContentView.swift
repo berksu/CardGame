@@ -25,9 +25,18 @@ struct ContentView: View {
 
     }
     
+    var newGameButton: some View{
+        Button {
+            viewModel.newGame()
+        } label: {
+            Text("New Game")
+        }
+
+    }
+    
     var content: some View{
         GeometryReader{ geometry in
-            ScrollView{
+            VStack{
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
                     ForEach(viewModel.cards){ card in
                         Card(card: card).aspectRatio(2/3, contentMode: .fit)
@@ -36,6 +45,8 @@ struct ContentView: View {
                             }
                     }
                 }
+                Spacer()
+                newGameButton.foregroundColor(.blue)
             }
         }
         .foregroundColor(.red)
