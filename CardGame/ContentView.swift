@@ -15,39 +15,49 @@ struct ContentView: View {
             title
             content
             Spacer()
-//            HStack{
-//                theme1
-//                Spacer()
-//                theme2
-//                Spacer()
-//                theme3
-//            }.padding()
         }.padding(.horizontal)
     }
     
     var title: some View{
-        Text("Memorize !")
+        Text(viewModel.chosenTheme.name)
             .font(.largeTitle)
             .fontWeight(.bold)
 
     }
     
+    var newGameButton: some View{
+        Button {
+            viewModel.newGame()
+        } label: {
+            Text("New Game")
+        }
+
+    }
+    
     var content: some View{
         GeometryReader{ geometry in
-            ScrollView{
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
-                    ForEach(viewModel.cards){ card in
-                        Card(card: card).aspectRatio(2/3, contentMode: .fit)
-                            .onTapGesture {
-                                viewModel.choose(card)
-                            }
+            VStack{
+                ScrollView{
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 65))]) {
+                        ForEach(viewModel.cards){ card in
+                            Card(card: card, gradient: viewModel.chosenTheme.gradient)
+                                .aspectRatio(2/3, contentMode: .fit)
+                                .onTapGesture {
+                                    viewModel.choose(card)
+                                }
+                        }
                     }
+                }
+                Spacer()
+                HStack{
+                    newGameButton.foregroundColor(.blue)
+                    Spacer()
+                    Text("Score : \(viewModel.score)")
                 }
             }
         }
-        .foregroundColor(.red)
+        .foregroundColor(viewModel.cardColor())
     }
-    
     
 //    func calculateTheMinimumSize(cardCount: Int, size: CGSize) -> CGFloat{
 //        var width = 0.0 , height = 0.0
@@ -69,53 +79,12 @@ struct ContentView: View {
 //        }
 //        return 65
 //    }
-    
-//    var theme1: some View{
-//        Button {
-//            emojis = themes["animals"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "tortoise").font(.largeTitle)
-//                Text("Animals")
-//            }
-//        }
-//
-//    }
-//
-//    var theme2: some View{
-//        Button {
-//            emojis = themes["vegetables"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "leaf").font(.largeTitle)
-//                Text("Vegetables")
-//            }
-//        }
-//
-//    }
-//
-//    var theme3: some View{
-//        Button {
-//            emojis = themes["emojis"]!
-//            count = Int.random(in: 4...emojis.count)
-//            emojis.shuffle()
-//        } label: {
-//            VStack{
-//                Image(systemName: "face.smiling").font(.largeTitle)
-//                Text("Emojis")
-//            }
-//        }
-//
-//    }
 }
 
 
 struct Card: View{
     var card: MemoryGame<String>.Card
+    var gradient: Gradient?
     
     var body: some View{
         ZStack{
@@ -128,7 +97,12 @@ struct Card: View{
                 shape.opacity(0)
             }
             else{
-                shape.fill()
+                // Extra credit 3
+                if let gradient = gradient {
+                    shape.fill(LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom))
+                }else{
+                    shape.fill()
+                }
             }
         }
     }

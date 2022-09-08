@@ -11,6 +11,7 @@
 		C971756E289810BA00FD3E2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C971756D289810BA00FD3E2F /* ContentView.swift */; };
 		C9717570289810BC00FD3E2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C971756F289810BC00FD3E2F /* Assets.xcassets */; };
 		C9717573289810BC00FD3E2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9717572289810BC00FD3E2F /* Preview Assets.xcassets */; };
+		C9F51AC728C4F53800F12301 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F51AC628C4F53800F12301 /* Themes.swift */; };
 		C9F6DC9928B6973700CCF5E7 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F6DC9828B6973700CCF5E7 /* MemoryGame.swift */; };
 		C9F6DC9D28B698F800CCF5E7 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F6DC9C28B698F700CCF5E7 /* EmojiMemoryGame.swift */; };
 /* End PBXBuildFile section */
@@ -21,6 +22,7 @@
 		C971756D289810BA00FD3E2F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C971756F289810BC00FD3E2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C9717572289810BC00FD3E2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9F51AC628C4F53800F12301 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
 		C9F6DC9828B6973700CCF5E7 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		C9F6DC9C28B698F700CCF5E7 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +63,7 @@
 				C9717571289810BC00FD3E2F /* Preview Content */,
 				C9F6DC9828B6973700CCF5E7 /* MemoryGame.swift */,
 				C9F6DC9C28B698F700CCF5E7 /* EmojiMemoryGame.swift */,
+				C9F51AC628C4F53800F12301 /* Themes.swift */,
 			);
 			path = CardGame;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				C9F6DC9928B6973700CCF5E7 /* MemoryGame.swift in Sources */,
 				C971756E289810BA00FD3E2F /* ContentView.swift in Sources */,
 				C971756C289810BA00FD3E2F /* CardGameApp.swift in Sources */,
+				C9F51AC728C4F53800F12301 /* Themes.swift in Sources */,
 				C9F6DC9D28B698F800CCF5E7 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
